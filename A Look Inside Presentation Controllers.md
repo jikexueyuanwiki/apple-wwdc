@@ -85,13 +85,19 @@ iPad 运行效果如下：
 `UIPopoverPresentationController` 有两个 delegate，通过它们可以改变 popover。  
 
  第一个方法，返回三个选项之一： FullScreen, OverFullScreen, 或 none 。
+
+
 ```
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller;
 ```
 
+ 第二个方法如果不实现，table controller 将会全屏展示，这样的话在我们的例子中，就看不到选中的文字在后面的 view 中显示。
 
 
- 第二个方法如果不实现，table controller 将会全屏展示，这样的话在我们的例子中，就看不到选中的文字在后面的 view 中显示。  ``` - (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style; ```   
+```
+- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style;
+```
+   
 ###Alert
    ![](images/05_alert_01.png)
 
